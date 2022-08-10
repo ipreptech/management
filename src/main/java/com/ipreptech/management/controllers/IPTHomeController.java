@@ -14,11 +14,6 @@ public class IPTHomeController {
         return String.format("<h1>Hello %s!<h1>", name);
     }
 
-    @GetMapping("student")
-    public Student getStudent() {
-        return new Student("Riyaz", "1", "ipreptech@gmai.com");
-    }
-
     @GetMapping
     public String home() {
         return "<h1>We are on Home page. Welcome to the class!!!  </h1>";
