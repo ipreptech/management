@@ -17,10 +17,24 @@ public class StudentService {
 
     @Autowired
     public StudentService(StudentRepository repository) {
+
         this.repository = repository;
     }
 
     public List<Student> getStudentById(String id) {
+
         return repository.getById(id);
+    }
+    public List<Student> getStudentByName(String name) {
+
+        return repository.getByName(name);
+    }
+    public List<Student> getStudentByEmail(String email) {
+
+        return repository.getByEmail(email);
+    }
+    public List<Student> getStudentByAll(String id,String name,String email) {
+
+        return repository.getByAll(id,name,email);
     }
 }

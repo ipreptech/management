@@ -19,6 +19,26 @@ public class StudentController {
     public List<Student> getStudent(@RequestParam(value = "id", required = false, defaultValue = "") String id,
                               @RequestParam(value = "name", required = false, defaultValue = "") String name,
                               @RequestParam(value = "email", required = false, defaultValue = "") String email) {
+
+        if ((!id.isEmpty()) && (!name.isEmpty()) && (!email.isEmpty())) {
+
+            return studentService.getStudentByAll(id, name, email);
+        }
+        if (!id.isEmpty()){
+
+            return studentService.getStudentById(id);
+        }
+        if (!name.isEmpty()) {
+
+            return studentService.getStudentByName(name);
+        }
+        if (!email.isEmpty()) {
+
+            return studentService.getStudentByEmail(email);
+        }
+
         return studentService.getStudentById(id);
     }
+
+
 }
